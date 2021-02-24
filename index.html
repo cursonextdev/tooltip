@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
+    <style>
+        body{
+            height: 500px;
+            background: #1b1b1b;
+            font-family: 'Poppins';
+            display: grid;
+            place-items: center;
+        }
+        .tooltip{
+            position: relative;
+            cursor: help;
+            color: #bbb;
+        }
+        .tooltip:hover{
+            color: #e0235c;
+        }
+        .tooltip:hover p.tip{
+            opacity: 1;
+            top: -6rem;
+            font-size: 25px;
+        }
+        .tooltip p.tip{
+            opacity: 0;
+            user-select: none;
+            pointer-events: none;
+
+            position: absolute;
+            left: 0;
+            top: -1.6rem;
+
+            font-size: 12px;
+            padding: .6rem;
+            border-radius: 5px;
+
+            background-color: #e0235c;
+            color:#fff;
+
+            width: max-content;
+            transition: opacity .2s, top .2s;
+        }
+        .feather{
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltip">
+        <p class="tip">Informação aqui!</p>
+        <i data-feather="info"></i>
+    </div>
+
+    <!-- Ícone -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>
